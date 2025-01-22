@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Page</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+     
+        <style>
+        .scrollable-div {
+            max-height: 100px;
+            /* Adjust the height as needed */
+            overflow-y: auto;
+        }
+
+        .stic {
+            position: sticky;
+        }
+
+        .overflow-cls {
+            overflow-x: scroll;
+        }
+
+        .over::-webkit-scrollbar {
+            display: none;
+        }
+
+        table th:nth-child(3),
+        table td:nth-child(3) {
+            position: sticky;
+            background-color: white;
+            left: 0;
+            z-index: 1;
+        }
+
+        table thead th:first-child {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        table tbody td:nth-child(2) {
+            text-wrap: nowrap;
+        }
+
+        .container-design {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                table-layout: auto;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (width < 600px) {
+            .container-design {
+                display: block;
+            }
+        }
+
+        .button-list .card {
+            margin-bottom: 15px;
+        }
+
+        .Modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.9);
+
+        }
+
+        .modal-content {
+            margin: auto;
+            z-index: 3;
+            display: flex;
+            max-height: 500px;
+            max-width: 1000px;
+            margin-top: 10vh;
+            object-fit: contain;
+            overflow: scrolls;
+        }
+
+        .close {
+            color: white;
+            cursor: pointer;
+            font-size: 40px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: 0.6s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+        }
+
+        #myImg {
+            cursor: pointer;
+        }
+
+        .caption {
+            color: white;
+            text-align: center;
+        }
+
+        .modal-content {
+            animation-name: fade-In;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes fade-In {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- comment để revert thôi hehe -->
+        <div class="logo  fs-1 fw-normal">
+            <h1>GROUP 10</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="group_diary.html">Group Diary</a></li>
+                <li><a href="project.html" class="fw-bold active">Project</a></li>
+                <li><a href="technical.html">Technical</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="result.html">Result</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="project-button">
+            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/23130039_NguyenXuanDai_login" class="btn">Go to project</a>
+        </div>
+    </header>
+    <div class="projectBigText">
+        <h1 class="fs-1">PROJECT</h1>
+    </div>
+    <div class="header-prjMenu" style="position: sticky;">
+        <div class="d-flex">
+            <ul class="nav nav-tabs flex-nowrap" id="weekTabs" role="tablist">
+                <li class="nav-item " role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-week="1"
+                        onclick="showSection('requirement')">Requirement</button>
+                </li>
+                <li class="nav-item " role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="2"
+                        onclick="showSection('design')">Design</button>
+                </li>
+                <li class="nav-item " role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="3"
+                        onclick="showSection('implement')">Implement</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="requirement" class="content-section ">
+        <div class="overflow-cls">
+            <table id="secondTable" class="table">
+                <thead>
+                    <tr style="position: sticky; top: 0; opacity: none; background-color:#D8DBBD;">
+                        <th id="small-table">Number</th>
+                        <th>Functional</th>
+                        <th>Proposer</th>
+                        <th>Designer</th>
+                        <th>Performer</th>
+                        <th>Intend time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id>1</td>
+                        <td>manage Homestay list, role, home in Group Web, blog list in GroupWeb,<br>home in homestay booking </td>
+                        <td>Nguyễn Hữu Duy</td>
+                        <td>Nguyễn Hữu Duy</td>
+                        <td>
+                            <div>Nguyễn Hữu
+                                Duy</div>
+                        </td>
+                        <td>9 WEEK</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Control panel,manage list of room, about, <br> Dải Ngọc HomeStay, VietNam tech startup blog</td>
+                        <td>Nguyễn Võ Quốc Tuấn</td>
+                        <td>Nguyễn Võ Quốc Tuấn</td>
+                        <td>Nguyễn Võ Quốc Tuấn</td>
+                        <td>9 WEEK</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>menu list homestay booking, manage comments, <br> blogDetails, contact, result</td>
+                        <td>Lê Ngọc Châu</td>
+                        <td>Lê Ngọc Châu</td>
+                        <td>Lê Ngọc Châu</td>
+                        <td>9 WEEK</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>manage blogs, manage location, deluxe room, <br> food in Viet Nam blog, blog list Page</td>
+                        <td>Nguyễn Xuân Đại</td>
+                        <td>Nguyễn Xuân Đại</td>
+                        <td>Nguyễn Xuân Đại</td>
+                        <td>9 WEEK</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>manage reservations, manage user, project, technical,<br> culture of cafe in Sai Gon, homstay list</td>
+                        <td>Nguyễn Đình Hiếu</td>
+                        <td>Nguyễn Đình Hiếu</td>
+                        <td>Nguyễn Đình Hiếu</td>
+                        <td>9 WEEK</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="design" class="content-section" style="display:none; ">
+        <div class="button-list">
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#content-0">
+                    <a class="btn">Nguyễn Hữu Duy</a>
+                </div>
+                <div class="collapse p-2" id="content-0">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Hand Paint</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Home group Web</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/index1.jpg" alt="Hand Paint Home group Web">
+                                    <a href="./handpaint/index1.jpg" download="index1.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Blogs</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/blog.jpg" alt="Hand Paint Blogs">
+                                    <a href="./handpaint/blog.jpg" download="blog.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Manage homestays</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/nhanghi.jpg" alt="Hand Paint Manage homestays">
+                                    <a href="./handpaint/nhanghi.jpg" download="nhanghi.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Manage roles</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/vaitro.jpg" alt="Hand Paint Manage roles">
+                                    <a href="./handpaint/vaitro.jpg" download="vaitro.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Home of homestay booking</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/index2.jpg" alt="Hand Paint Home of homestay booking">
+                                    <a href="./handpaint/index2.jpg" download="index2.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-p">Result</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Index Group Web</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/indexGroupWeb.png" alt="Result Index Group Web">
+                                    <a href="./result/indexGroupWeb.png" download="indexGroupWeb.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Blog</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/blog.png" alt="Result Blog">
+                                    <a href="./result/blog.png" download="blog.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Manage Homestays</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/danhmuc.png" alt="Result Manage Homestays">
+                                    <a href="./result/danhmuc.png" download="danhmuc.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Manage Roles</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/danhmuc.png" alt="Result Manage Roles">
+                                    <a href="./result/danhmuc.png" download="danhmuc.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Home of Homestay Booking</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/indexgdnd1.png" alt="Result Home of Homestay Booking">
+                                    <a href="./result/indexgdnd1.png" download="index2.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button id="downloadAllNguyenHuuDuy" class="btn btn-success">Download All</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#content-1">
+                    <a class="btn">
+                        Nguyễn Võ Quốc Tuấn
+                    </a>
+                </div>
+                <div class="collapse p-2" id="content-1">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Hand Paint</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/about.jpg" alt="Hand Paint About">
+                                    <a href="./handpaint/about.jpg" download="about.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/trangchu.jpg" alt="Hand Paint Trang Chu">
+                                    <a href="./handpaint/trangchu.jpg" download="trangchu.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/nhanghi.jpg" alt="Hand Paint Danh Muc">
+                                    <a href="./handpaint/nhanghi.jpg" download="danhsachphong.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/contact2.jpg" alt="Hand Paint Contact 2">
+                                    <a href="./handpaint/contact2.jpg" download="contact2.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/daingoc.jpg" alt="Hand Paint Tay Teo">
+                                    <a href="./handpaint/daingoc.jpg" download="daingoc.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-p">Result</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/about.png" alt="Result About">
+                                    <a href="./result/about.png" download="about.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/bangdieukhien.png" alt="Result Trang Chu">
+                                    <a href="./result/bangdieukhien.png" download="bangdieukhien.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/danhsachphong.png" alt="Result danh sach phong">
+                                    <a href="./result/danhsachphong.png" download="danhsachphong.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/contactgdnd.png" alt="Result Contact gdnd">
+                                    <a href="./result/contactgdnd.png" download="contact2.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/homstaydetails.png" alt="Result hometay detail">
+                                    <a href="./result/homstaydetails.png" download="homstaydetails.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/startup.png" alt="Result hometay detail">
+                                    <a href="./result/startup.png" download="startup.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button id="downloadAllNguyenVoQuocTuan" class="btn btn-success">Download All</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#content-10">
+                    <a class="btn">Nguyễn Đình Hiếu</a>
+                </div>
+                <div class="collapse p-2" id="content-10">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Hand Paint</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Project</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/project.jpg" alt="Hand Paint Project">
+                                    <a href="./handpaint/project.jpg" download="project.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Technical</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/technical.jpg" alt="Hand Paint Technical">
+                                    <a href="./handpaint/technical.jpg" download="technical.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Manage Reservation Room List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/danhsachdatphong.jpg" alt="Hand Paint Danh Muc">
+                                    <a href="./handpaint/danhsachdatphong.jpg" download="danhsachdatphong.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Manage user list</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/nguoidung.jpg" alt="Hand Paint Danh Muc 2">
+                                    <a href="./handpaint/nguoidung.jpg" download="nguoidung.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Nha Nghi List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/nhanghilist.jpg" alt="Hand Paint Nha Nghi List">
+                                    <a href="./handpaint/nhanghilist.jpg" download="nhanghilist.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-p">Result</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Project</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/requiment.png" alt="Result Project">
+                                    <a href="./result/project.png" download="project.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                   
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/design.png" alt="Result Project">
+                                    <a href="./result/design.png" download="design.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Technical</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/technical.png" alt="Result Technical">
+                                    <a href="./result/technical.png" download="technical.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Manage Reservation Room List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/danhsachdatphong.png" alt="Result Manage Reservation Room List">
+                                    <a href="./result/danhsachdatphong.png" download="danhsachdatphong.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Manage users List 2</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/nguoidung.png" alt="Result Manage Reservation Room List 2">
+                                    <a href="./result/nguoidung.png" download="nguoidung.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Nha Nghi List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/homstayList.png" alt="Result Nha Nghi List">
+                                    <a href="./result/homstayList.png" download="homstayList.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Nha Nghi List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/cafe.png" alt="Result Nha Nghi List">
+                                    <a href="./result/cafe.png" download="cafe.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button id="downloadAllNguyenDinhHieu" class="btn btn-success">Download All</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#content-20">
+                    <a class="btn">Nguyễn Xuân Đại</a>
+                </div>
+                <div class="collapse p-2" id="content-20">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Hand Paint</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Style Guide</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/styleGuild.jpg" alt="Hand Paint Style Guide">
+                                    <a href="./handpaint/styleGuild.jpg" download="styleGuild.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Project room details</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/phongdetai.jpg" alt="Hand Paint Pong De Tai">
+                                    <a href="./handpaint/phongdetai.jpg" download="phongdetai.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Blog List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/bài viết.jpg" alt="Hand Paint blog  List">
+                                    <a href="./handpaint/bài viết.jpg" download="bài viết.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Blog</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/baiviet.jpg" alt="Hand Paint Danh Muc">
+                                    <a href="./handpaint/baiviet.jpg" download="baiviet.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Location</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/diadiem.jpg" alt="Hand Paint Danh Muc">
+                                    <a href="./handpaint/diadiem.jpg" download="diadiem.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-p">Result</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Style Guide</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/styleGuide.png" alt="Result Style Guide">
+                                    <a href="./result/styleGuild.pgn" download="styleGuild.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result room Details</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/phongdeluxe.png" alt="Result Pong De Tai">
+                                    <a href="./result/phongdeluxe.png" download="phongdeluxe.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result blogs</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/bloggdnd.png" alt="Result blogs">
+                                    <a href="./result/bloggdnd.png" download="blogList.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result manage blogs</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/baiviet.png" alt="Result Danh Muc">
+                                    <a href="./result/baiviet.pgn" download="baiviet.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result manage locations</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/diadiem.png" alt="Result Danh Muc">
+                                    <a href="./result/diadiem.png" download="diadiem.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result food in VietNam</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/amthuc.png" alt="Result Danh Muc">
+                                    <a href="./result/amthuc.png" download="amthuc.pgn" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button id="downloadAllNguyenXuanDai" class="btn btn-success">Download All</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#content-3">
+                    <a class="btn">Lê Ngọc Châu</a>
+                </div>
+                <div class="collapse p-2" id="content-3">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Hand Paint</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Contact Us</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/contactus.jpg" alt="Hand Paint Contact Us">
+                                    <a href="./handpaint/contactus.jpg" download="contactus.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Danh Muc</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/danhmuc.jpg" alt="Hand Paint Danh Muc">
+                                    <a href="./handpaint/danhmuc.jpg" download="danhmuc.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>List of blog</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/blog in gdnd.jpg" alt="Hand Paint ">
+                                    <a href="./handpaint/blog in gdnd.jpg" download="blog in gdnd.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>result</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/result.jpg" alt="Hand Paint danhsachphong">
+                                    <a href="./handpaint/result.jpg" download="result.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>manage comment</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./handpaint/binhluan.jpg" alt="Hand Paint manage comment">
+                                    <a href="./handpaint/binhluan.jpg" download="binhluan.jpg" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-p">Result</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Contact Us</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/contactus.png" alt="Result Contact Us">
+                                    <a href="./result/contactus.png" download="contactus.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result result</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/result.png" alt="Result Danh Muc">
+                                    <a href="./result/result.png" download="result.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Danh Muc</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/danhmuc.png" alt="Result Danh Muc">
+                                    <a href="./result/danhmuc.png" download="danhmuc.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Quan Ly Binh Luan</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/quanlybinhluan.png" alt="Result Quan Ly Binh Luan">
+                                    <a href="./result/quanlybinhluan.png" download="quanlybinhluan.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result Nha Nghi List</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/roomlist.png" alt="Result Nha Nghi List">
+                                    <a href="./result/roomlist.png" download="roomlist.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Result travel blog</p>
+                                    <img class="myImg" style="width: 30%; max-width: 500px;" src="./result/dulich.png" alt="Result Nha Nghi List">
+                                    <a href="./result/dulich.png" download="dulich.png" class="btn btn-outline-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <button id="downloadAllLeNgocChau" class="btn btn-success">Download All</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="implement" class="content-section" style="display:none;">
+        <div class="button-list">
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-0">
+                    <a class="btn">Bảng điều khiển</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-0">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Statistical</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/index.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-1">
+                    <a class="btn">Danh mục</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-1">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/danhmuc.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-2">
+                    <a class="btn">Bài viết</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-2">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/bai_viet.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-3">
+                    <a class="btn">Địa điểm</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-3">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/dia_diem.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-4">
+                    <a class="btn">Nhà nghỉ</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-4">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/homestay.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-5">
+                    <a class="btn">Danh sách phòng</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-5">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/rooms.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-6">
+                    <a class="btn">Danh sách đặt phòng</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-6">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/danhSachDatPhong.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-7">
+                    <a class="btn">Quản lý bình luận</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-7">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/comment.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-8">
+                    <a class="btn">Vai trò</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-8">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                              
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/role.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other cards -->
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#implement-content-9">
+                    <a class="btn">Người dùng</a>
+                </div>
+                <div class="collapse p-2" id="implement-content-9">
+                    <div class="container-design">
+                        <div>
+                            <p class="left-p">Functions</p>
+                            <div style="display: block;">
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Create</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Edit</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Remove</p>
+                                </div>
+                                <div style="display: inline-block; text-align: center; margin: 10px;">
+                                    <p>Search</p>
+                                </div>
+                            </div>
+                            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/nguoiDung.html" class="btn btn-outline-primary">Go to this page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- modal show big image -->
+    <div id="modal" class="Modal">
+        <span class="close" id="close">&times;</span>
+        <img id="modal-img" class="modal-content">
+        <div id="caption" class="caption"></div>
+    </div>
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-group-info">
+                <h3>GROUP 10</h3>
+                <p>Hồ Chí Minh Nông Lâm University<br>Thủ Đức City, Hồ Chí
+                    Minh City, Việt Nam</p>
+                <p>Phone: +89 039 816 722<br>Email:
+                    hci2024group10@gmail.com</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="group_diary.html">Group Diary</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="technical.html">Technical</a></li>
+                    <li><a href="style_guide.html">Style Guide</a></li>
+                    <li><a href="result.html">Result</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-members">
+                <h4>Our Members</h4>
+                <ul>
+                    <li><a href="#">Nguyễn Hữu Duy</a></li>
+                    <li><a href="#">Nguyễn Xuân Đại</a></li>
+                    <li><a href="#">Nguyễn Võ Quốc Tuấn</a></li>
+                    <li><a href="#">Lê Ngọc Châu</a></li>
+                    <li><a href="#">Nguyễn Đình Hiếu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Email is here" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // use for color button when active
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.nav-link').forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+                updateTable(e.target.getAttribute('data-week'));
+            });
+        });
+
+        
+        // Get the modal
+        var modal = document.getElementById("modal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var images = document.getElementsByTagName("img");
+        console.log(images)
+        var modalImg = document.getElementById("modal-img");
+        var captionText = document.getElementById("caption");
+
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function(){
+                modal.style.display = "block";
+                console.log(this.src)
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Download All Images for Nguyễn Xuân Đại
+    document.getElementById('downloadAllNguyenXuanDai').addEventListener('click', function() {
+        var links = document.querySelectorAll('#content-20 .btn-outline-primary');
+        links.forEach(link => {
+            var url = link.getAttribute('href');
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
+    // Download All Images for Lê Ngọc Châu
+    document.getElementById('downloadAllLeNgocChau').addEventListener('click', function() {
+        var links = document.querySelectorAll('#content-3 .btn-outline-primary');
+        links.forEach(link => {
+            var url = link.getAttribute('href');
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
+
+    // Download All Images for Nguyễn Hữu Duy
+    document.getElementById('downloadAllNguyenHuuDuy').addEventListener('click', function() {
+        var links = document.querySelectorAll('#content-0 .btn-outline-primary');
+        links.forEach(link => {
+            var url = link.getAttribute('href');
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
+    // Download All Images for Nguyễn Đình Hiếu
+    document.getElementById('downloadAllNguyenDinhHieu').addEventListener('click', function() {
+        var links = document.querySelectorAll('#content-10 .btn-outline-primary');
+        links.forEach(link => {
+            var url = link.getAttribute('href');
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
+
+    // Download All Images for tuấn
+    document.getElementById('downloadAllNguyenVoQuocTuan').addEventListener('click', function() {
+        var links = document.querySelectorAll('#content-1 .btn-outline-primary');
+        links.forEach(link => {
+            var url = link.getAttribute('href');
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

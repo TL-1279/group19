@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 10 - Human-Computer Interaction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>GROUP 10</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html" class="fw-bold active">About</a></li>
+                <li><a href="group_diary.html">Group Diary</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="technical.html">Technical</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="result.html">Result</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="project-button">
+            <a href="https://duyhuunguyen.github.io/HotelManagerWeb/23130039_NguyenXuanDai_login" class="btn">Go to project</a>
+        </div>
+    </header>
+
+    <!-- <main> -->
+    <section class="hero">
+        <h2 class="fw-bold">Meet Our Team</h2>
+    </section>
+
+    <!-- Group Overview Section -->
+    <section class="group-overview">
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.20/babel.min.js"></script>
+
+        <script type="text/babel">
+            // Member Card Component
+            const MemberCard = ({ member }) => {
+                return (
+                    <div className="member-card bg-white rounded-3 p-3 text-center shadow-lg d-flex flex-column h-100">
+                        <a className="profile d-inline-block w-100 text-decoration-none d-flex flex-column h-100" href={member.profileUrl} target="_blank">
+                            <div className="flex-grow-1">
+                                <img
+                                    src={member.imageUrl}
+                                    alt={member.name}
+                                    className="rounded-circle mx-auto mb-3 object-fit-cover border-theme"
+                                    style={{
+                                        width: '120px',
+                                        height: '120px'
+                                    }}
+                                />
+                                <h2 className="fs-5 mb-1 fw-medium" style={{ color: 'var(--background-color-dark-blue)' }}>
+                                    {member.name}
+                                </h2>
+                                <p className="fw-normal mb-1" style={{ color: 'var(--background-color-dark-blue)' }}>
+                                    {member.role}
+                                </p>
+                                <hr className="w-75 mx-auto my-2" style={{ color: 'var(--background-color-dark-blue)' }} />
+                                <div className="text-start my-2 small" style={{ color: 'var(--background-color-dark-blue)' }}>
+                                    <p className="mb-1">Student ID: {member.studentId}</p>
+                                    <p className="mb-1">Class: {member.class}</p>
+                                    <p className="mb-1">Hobbies: {member.hobbies}</p>
+                                </div>
+                            </div>
+                            <div className="social-links d-flex justify-content-center gap-3 mt-auto pt-3">
+                                <a href={`mailto:${member.email}`} title="Email" className="social-icon d-flex align-items-center justify-content-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </a>
+                                <a href={member.portfolioUrl} target="_blank" title="Portfolio" className="social-icon d-flex align-items-center justify-content-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                                        <polyline points="13 2 13 9 20 9" />
+                                    </svg>
+                                </a>
+                                <a href={member.facebookUrl} target="_blank" title="Facebook" className="social-icon d-flex align-items-center justify-content-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
+                                </a>
+                                <a href={member.githubUrl} target="_blank" title="GitHub" className="social-icon d-flex align-items-center justify-content-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                );
+            };
+
+            // App Component with multiple members
+            const App = () => {
+                const members = [
+                    {
+                        name: "Nguyễn Hữu Duy",
+                        role: "Leader",
+                        studentId: "23130075",
+                        class: "DH23DTC",
+                        hobbies: "Play badminton, watching movies,...",
+                        profileUrl: "https://duyhuunguyen.github.io/GTNM/",
+                        imageUrl: "img/duy.jpg",
+                        email: "23130075@hcmuaf.edu.vn",
+                        portfolioUrl: "https://duyhuunguyen.github.io/GTNM/",
+                        facebookUrl: "#facebook-profile",
+                        githubUrl: "https://github.com/DuyHuuNguyen"
+                    },
+                    {
+                        name: "Nguyễn Xuân Đại",
+                        role: "Member",
+                        studentId: "23130039",
+                        class: "DH23DTB",
+                        hobbies: "Play volleyball, badminton, League of Legends,...",
+                        profileUrl: "https://xuni-dizan.github.io/Trang_ca_nhan/index.html",
+                        imageUrl: "img/dai.jpg",
+                        email: "23130039@st.hcmuaf.edu.vn",
+                        portfolioUrl: "https://xuni-dizan.github.io/Trang_ca_nhan/index.html",
+                        facebookUrl: "https://www.facebook.com/xuni.dizan",
+                        githubUrl: "https://github.com/Xuni-Dizan"
+                    },
+                    {
+                        name: "Nguyễn Võ Quốc Tuấn",
+                        role: "Member",
+                        studentId: "23130370",
+                        class: "DH23DTA",
+                        hobbies: "Swimming, drawing,...",
+                        profileUrl: "https://nguyentuan2005.github.io/NguyenVoQuocTuan-23130370-HCI/",
+                        imageUrl: "img/tuan.jpg",
+                        email: "23130370@.hcmuaf.edu.vn",
+                        portfolioUrl: "https://nguyentuan2005.github.io/NguyenVoQuocTuan-23130370-HCI/",
+                        facebookUrl: "https://www.facebook.com/profile.php?id=100040384152520",
+                        githubUrl: "https://github.com/NguyenTuan2005"
+                    },
+                    {
+                        name: "Lê Ngọc Châu",
+                        role: "Member",
+                        studentId: "23130028",
+                        class: "DH23DTA",
+                        hobbies: "Reading, gardening,...",
+                        profileUrl: "https://chaule74.github.io/hci2025/#",
+                        imageUrl: "img/chau.jpg",
+                        email: "23130028@.hcmuaf.edu.vn",
+                        portfolioUrl: "https://chaule74.github.io/hci2025/#",
+                        facebookUrl: "https://www.facebook.com/profile.php?id=100012239899429&mibextid=ZbWKwL",
+                        githubUrl: "https://github.com/chaule74"
+                    },
+                    {
+                        name: "Nguyễn Đình Hiếu",
+                        role: "Member",
+                        studentId: "23130107",
+                        class: "DH23DTC",
+                        hobbies: "Listening to music, social clubs,...",
+                        profileUrl: "https://hieuquenbt.github.io/hci2425/",
+                        imageUrl: "img/hiu.jpg",
+                        email: "23130107@.hcmuaf.edu.vn",
+                        portfolioUrl: "https://hieuquenbt.github.io/hci2425/",
+                        facebookUrl: "#facebook-profile",
+                        githubUrl: "https://github.com/hieuquenbt"
+                    }
+                ];
+
+                return (
+                    <div className="team-grid">
+                        {members.map((member, index) => (
+                            <MemberCard key={index} member={member} />
+                        ))}
+                    </div>
+                );
+            };
+
+            // Render the app
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />);
+        </script>
+    </section>
+    <!-- </main> -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-group-info">
+                <h3>GROUP 10</h3>
+                <p>Hồ Chí Minh Nông Lâm University<br>Thủ Đức City, Hồ Chí Minh City, Việt Nam</p>
+                <p>Phone: +89 039 816 722<br>Email: hci2024group10@gmail.com</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="group_diary.html">Group Diary</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="technical.html">Technical</a></li>
+                    <li><a href="style_guide.html">Style Guide</a></li>
+                    <li><a href="result.html">Result</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-members">
+                <h4>Our Members</h4>
+                <ul>
+                    <li><a href="#">Nguyễn Hữu Duy</a></li>
+                    <li><a href="#">Nguyễn Xuân Đại</a></li>
+                    <li><a href="#">Nguyễn Võ Quốc Tuấn</a></li>
+                    <li><a href="#">Lê Ngọc Châu</a></li>
+                    <li><a href="#">Nguyễn Đình Hiếu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Email is here" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
